@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { useActions } from '../../hooks/useActions'
 import { useSortedPosts } from '../../hooks/useSortedPosts'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
-import ItemsReducer, { RootState } from '../../store'
 import './Home.scss'
 
 const Home: React.FC = () => {

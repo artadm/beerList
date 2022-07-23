@@ -22,10 +22,8 @@ export const ListActionCreators = {
         try {
             dispatch(ListActionCreators.setIsLoading(true))
             const response = await axios.get<IBeer[]>(`https://api.punkapi.com/v2/beers/${id}`)
-            dispatch(ListActionCreators.setIsLoading(false))
             dispatch(ListActionCreators.setItem(response.data[0]))
-
-
+            dispatch(ListActionCreators.setIsLoading(false))
         } catch (e) {
             console.log(e);
         } finally {

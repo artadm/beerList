@@ -3,7 +3,6 @@ import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useActions } from '../../hooks/useActions'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
-import { IBeer } from '../../modal/IBeer'
 import './ItemPage.scss'
 
 
@@ -14,6 +13,7 @@ const ItemPage: React.FC = () => {
     useEffect(() => {
         fetchCurrentItem(Number(id))
     }, [])
+
 
 
     return (
@@ -35,9 +35,9 @@ const ItemPage: React.FC = () => {
                         <div className="item__foodpair">
                             <h2>Food Pairing</h2>
                             <ul>
-                                {item.food_pairing.map(pair =>
+                                {item.food_pairing ? item.food_pairing.map(pair =>
                                     <li key={pair}>{pair}</li>
-                                )}
+                                ) : <></>}
                             </ul>
                         </div>
                         <Link to='/' className="item__btn">
